@@ -32,6 +32,5 @@ int main(){
     string output = tool.vectorToString(res);
 
     cout << "输出:\n" << output  << endl;
-    
     return 0;
 }
