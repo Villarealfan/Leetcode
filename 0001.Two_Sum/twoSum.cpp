@@ -21,9 +21,10 @@ int main(){
     Solution so;
 
     string line;
-    cout << "输入:" << endl;
+    cout << "输入 nums:" << endl;
     getline(cin, line);
     vector<int> nums = tool.stringToVector(line);
+    cout << "输入 target:" << endl;
     getline(cin, line);
     int target = stoi(line);
 
