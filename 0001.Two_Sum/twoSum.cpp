@@ -1,13 +1,3 @@
-/*=============================================================================
-# 作者: 桂继宏
-# 最近修改时间: 2020-06-09 15:13
-# 文件名: twoSum.cpp
-=============================================================================*/
-/* You may assume that each input would have exactly one solution, and you may not use the same element twice.
- * Example:
-   Given nums = [2, 7, 11, 15], target = 9, Because nums[0] + nums[1] = 2 + 7 = 9, return [0, 1].
-*/
-
 #include "../include/tools.h"
 
 class Solution {
