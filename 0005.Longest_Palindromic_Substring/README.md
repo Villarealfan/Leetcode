@@ -57,8 +57,8 @@ public:
 **$p[i][j] = 1$**
 
 >- $i = j$, 即单字符 $a$ 
->- $j=1 \& dp[i]=dp[j]$, 即双字符 $aa$ 
->- $p[i - 1][j + 1] \& dp[i]=dp[j]$, 即中间是回文子串且两头相同 $axxxa$
+>- $j=1 and dp[i]=dp[j]$, 即双字符 $aa$ 
+>- $p[i - 1][j + 1] and dp[i]=dp[j]$, 即中间是回文子串且两头相同 $axxxa$
    
 # Manacher 算法
 
