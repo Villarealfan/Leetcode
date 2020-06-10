@@ -56,7 +56,7 @@ public:
 
 **状态转移方程**
 
-<img src="http://latex.codecogs.com/gif.latex?dp[i][j]=1\begin{cases}i=j,即单字符,'a'\\i-j=1&&dp[i]=dp[j],即双字符,'aa'\\p[i - 1][j + 1]&&dp[i]=dp[j],即中间是回文子串，两头相同,'axxxa'\end{cases}" />
+![avatar](状态转移方程.png)
 
    
 # Manacher 算法
