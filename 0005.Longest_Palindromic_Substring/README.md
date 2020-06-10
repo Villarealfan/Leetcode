@@ -48,21 +48,15 @@ public:
 ```
 
 ## 复杂度
-* 时间复杂度: $O(n^2)$
-* 空间复杂度: $O(n^2)$
+* 时间复杂度: <img src="http://latex.codecogs.com/gif.latex?O(n^2)" />
+
+* 空间复杂度: <img src="http://latex.codecogs.com/gif.latex?O(n^2)" />
 
 ## 思路
 
 **状态转移方程**
 
-$$
-dp[i][j] = 1
-\begin{cases}
-i = j, 即单字符, 'a' \\
-i - j = 1 && dp[i] = dp[j], 即双字符, 'aa' \\
-p[i - 1][j + 1] && dp[i] = dp[j], 即中间是回文子串，两头相同, 'axxxa'
-\end{cases}
-$$
+<img src="http://latex.codecogs.com/gif.latex?dp[i][j] = 1\begin{cases}i = j, 即单字符,'a' \\i - j = 1 && dp[i] = dp[j], 即双字符, 'aa' \\p[i - 1][j + 1] && dp[i] = dp[j], 即中间是回文子串，两头相同, 'axxxa'\end{cases} />
 
    
 # Manacher 算法
@@ -139,8 +133,8 @@ public:
           	       i 0 1 2 3 4 5 6 7 8 9 10
 		           t # a # b # a # b # a #
 	       radius[i] 1 2 1 4 1 6 1 4 1 2 1
-		                       ↑
-				        radius[5] = 6, center = 5 
+		                   ↑
+				 radius[5] = 6, center = 5 
 如上所示，由 radius[5] = 6 和 center = 5, 字符串 t = "#a#b#a#b#a#"  的起点位置 startpoint  = center - radius + 1 = 0
 		
 但这个位置是 t 中的位置，需要找到s中对应的位置，由于 # 和原字符各占一位，因此 startpoint/2（向下取整）为 s 中起点位置。
