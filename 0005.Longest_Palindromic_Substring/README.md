@@ -56,7 +56,7 @@ public:
 
 **状态转移方程**
 
-<img src="http://latex.codecogs.com/gif.latex?dp[i][j] = 1\begin{cases}i = j, 即单字符,'a' \\i - j = 1 && dp[i] = dp[j], 即双字符, 'aa' \\p[i - 1][j + 1] && dp[i] = dp[j], 即中间是回文子串，两头相同, 'axxxa'\end{cases} />
+<img src="http://latex.codecogs.com/gif.latex?dp[i][j]=1\begin{cases}i=j,即单字符,'a'\\i-j=1&&dp[i]=dp[j],即双字符,'aa'\\p[i - 1][j + 1]&&dp[i]=dp[j],即中间是回文子串，两头相同,'axxxa'\end{cases}" />
 
    
 # Manacher 算法
@@ -124,7 +124,7 @@ public:
 
 为了处理奇偶长度的字符串，将字符空档处全部插入#, 如 s = "abc" ==> t = "#a#b#c#" , 无论s长度是奇是偶，t长度为奇（#比原字符始终多一个，n + n +1 = 2n+1，为奇）
 
---
+
 
 * **找 t 中字符在 s 中对应位置**
 
@@ -143,7 +143,7 @@ public:
 	
 因此若找到最大的 radius 和  center ，即可输出 s.substr((center - radius + 1)/2, radius - 1) 。
 	
---
+
 
 * **利用对称性更新半径**
 
@@ -164,10 +164,10 @@ public:
 
 因此 radius[i] 以外的左端元素 t[i - radius[i]] 和右端元素 t[i + radius[i]] 仍需要判断，这里的判断又没有历史信息可以参考，只能逐一判断。
 
---
+
 
 * **更新右边界和中心**
 
---
+
 
 * **更新最大半径和中心**
