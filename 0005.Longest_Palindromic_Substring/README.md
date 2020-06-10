@@ -58,9 +58,9 @@ public:
 
 $$
 dp[i][j] = 1 \begin{cases}
-i=j, 单字符 a \\
-i-j=1 & dp[i]=dp[j], 双字符\ aa \\
-p[i - 1][j + 1] & dp[i]=dp[j], 即中间是回文子串且两头相同 axxxa 
+i=j, \text{单字符 a} \\
+i-j=1 & dp[i]=dp[j], \text{双字符 aa} \\
+p[i - 1][j + 1] & dp[i]=dp[j], \text{即中间是回文子串且两头相同 axxxa} 
 \end{cases}
 $$
    
