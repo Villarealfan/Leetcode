@@ -48,16 +48,22 @@ public:
 ```
 
 ## 复杂度
-* 时间复杂度: <img src="http://latex.codecogs.com/gif.latex?O(n^2)" />
+* 时间复杂度: $O(n^2)$
 
-* 空间复杂度: <img src="http://latex.codecogs.com/gif.latex?O(n^2)" />
+* 空间复杂度: $O(n^2)$
 
 ## 思路
 
 **状态转移方程**
 
-![avatar](状态转移方程.png)
-
+$$
+dp[i][j] = 1 
+\begin{cases}
+i=j, \ 单字符\ a\\
+i-j=1\ \&\&\ dp[i]=dp[j],\ 双字符\ aa\\
+p[i - 1][j + 1]\ \&\&\ dp[i]=dp[j], 即中间是回文子串且两头相同,axxxa
+\end{cases}
+$$
    
 # Manacher 算法
 
