@@ -56,13 +56,11 @@ public:
 
 **状态转移方程**
 
-$$
-dp[i][j] = 1 \begin{cases}
-i=j, \text{单字符 a} \\
-i-j=1 & dp[i]=dp[j], \text{双字符 aa} \\
-p[i - 1][j + 1] & dp[i]=dp[j], \text{即中间是回文子串且两头相同 axxxa} 
-\end{cases}
-$$
+$ dp[i][j] = 1 $
+
+>- $i = j$, 即单字符 $a$ \\
+>- $j=1 & dp[i]=dp[j]$, 即双字符 $aa$ \\
+>- $p[i - 1][j + 1] & dp[i]=dp[j]$, 即中间是回文子串且两头相同 $axxxa$
    
 # Manacher 算法
 
