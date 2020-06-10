@@ -57,11 +57,10 @@ public:
 **状态转移方程**
 
 $$
-dp[i][j] = 1 
-\begin{cases}
-i=j, \ 单字符\ a\\
-i-j=1\ \&\&\ dp[i]=dp[j],\ 双字符\ aa\\
-p[i - 1][j + 1]\ \&\&\ dp[i]=dp[j], 即中间是回文子串且两头相同,axxxa
+dp[i][j] = 1 \begin{cases}
+i=j, 单字符 a \\
+i-j=1 & dp[i]=dp[j], 双字符\ aa \\
+p[i - 1][j + 1] & dp[i]=dp[j], 即中间是回文子串且两头相同 axxxa 
 \end{cases}
 $$
    
