@@ -148,21 +148,35 @@ void trimRightTrailingSpaces(string &input) {
 }
 ```
 **trimLeftTrailingSpaces** 函数中的
->  **find_if(input.begin(), input.end(), \[](int ch) {return !isspace(ch); })**
+```cpp
+find_if(input.begin(), input.end(), [](int ch) {
+    return !isspace(ch); 
+})
+```
    
 从头找到位，找不是空格的，返回的是 **iterator**
       
-  > **isspace(ch)** 
-      
- 判定是否为空格
+```cpp
+isspace(ch) 
+```
+
+判定是否为空格
  
- > **\[] (int ch) {return !isspace(ch);}**  
+```cpp
+[] (int ch) {
+    return !isspace(ch);
+}
+```
       
  C++ 中 **lambda** 函数的写法，和 python 中匿名函数类似
       
 **trimRightTrailingSpaces** 函数中的
 
-> **find_if(input.rbegin(), input.rend(), \[](int ch) { return !isspace(ch); }).base()**
+```cpp
+find_if(input.rbegin(), input.rend(), [](int ch) { 
+    return !isspace(ch); 
+ }).base()
+```
 
 这里从右边开始找到左边，找不是空格的，返回的是 **reverse_iterator**
 
