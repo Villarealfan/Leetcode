@@ -7,7 +7,7 @@
 >     P   A   H   N 
     A P L S I I G
     Y   I   R
-And then read line by line: "**PAHNAPLSIIGYIR**"
+> And then read line by line: "**PAHNAPLSIIGYIR**"
 
 > Write the code that will take a string and make this conversion given a number of rows:
 
@@ -28,10 +28,10 @@ And then read line by line: "**PAHNAPLSIIGYIR**"
 
 > **Explanation**:
 
->     P     I    N
-    A   L S  I G
-    Y A   H R
-    P     I
+>      P     I    N
+>    A   L S  I G
+>    Y A   H R
+>    P     I
 
 
 
