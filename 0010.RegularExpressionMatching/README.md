@@ -110,29 +110,24 @@ public:
 		* s = "xxxayyy", p = "zzzawww" (s 中的 a 与 p 中的 a 匹配上了)
 		* s = "xxxayyy", p = "zzz.www" (s 中的 a 与 p 中的 . 匹配上了)
 	
-	这两种情况下，都是需要看前面的 s = "xxx" 与 p = "zzz" 的匹配情况，即:
-	
-	$dp[i][j] = dp[i - 1][j -1]$
+	这两种情况下，都是需要看前面的 s = "xxx" 与 p = "zzz" 的匹配情况，即: $dp[i][j] = dp[i - 1][j -1]$
 	
 	* 若 p[j - 1] 是通过 * 匹配上 s[i - 1] ，即 p[j - 1] == '*' 时
 		* 若 p[j - 2] 能匹配上 s[i - 1]，即 p[j - 2] == '.' 或 p[j - 2] == s[i - 1]，例如：
 			* p[j - 2] == '.' 时		
 			
-			> s = "xxxayyy", p = "zz.\*www" (s 中的 a 与 p 中的 .* 匹配上了)，此时需要看前面的 s = "xxxa" 与 p = "zz" 的匹配情况， $dp[i][j] = dp[i][j - 2]$
-			
-		        
+	> s = "xxxayyy", p = "zz.\*www" (s 中的 a 与 p 中的 .* 匹配上了)，此时需要看前面的 s = "xxxa" 与 p = "zz" 的匹配情况， $dp[i][j] = dp[i][j - 2]$
+
 	 * p[j - 2] == s[i - 1] 但 s[i - 1] != s[i - 2] 时
 		    
-		    > s = "xxxayyy", p = "zza\*www" (s 中的 a 与 p 中的 a* 匹配上了)，此时需要看前面的 s = "xxxa" 与 p = "zza" 的匹配情况， $dp[i][j] = dp[i][j  - 1]$
+     > s = "xxxayyy", p = "zza\*www" (s 中的 a 与 p 中的 a* 匹配上了)，此时需要看前面的 s = "xxxa" 与 p = "zza" 的匹配情况， $dp[i][j] = dp[i][j  - 1]$
 			
      * p[j - 2] == s[i - 1] 且 s[i - 1] == s[i - 2] 时
 		    
-		    > s = "xxaayyy", p = "zza\*www" (s 中的 aa 与 p 中的 a* 匹配上了)， 此时需要看前面的 s = "xxa" 与 p = "zza\*" 的匹配情况 (即 p 中 a* 前可能还有 s 前面的能匹配上， 对应 a* 可以匹配多个)， $dp[i][j] = dp[i - 1][j]$
+		  > s = "xxaayyy", p = "zza\*www" (s 中的 aa 与 p 中的 a* 匹配上了)， 此时需要看前面的 s = "xxa" 与 p = "zza\*" 的匹配情况 (即 p 中 a* 前可能还有 s 前面的能匹配上， 对应 a* 可以匹配多个)， $dp[i][j] = dp[i - 1][j]$
 	
 		* 若 p[j - 2] 不能匹配上 s[i - 1]， 即 p[j - 2] != '.' 或 p[j - 2] != s[i - 1] ，例如
-			* s = "xxxayyy", p = "zzb\*www" (p 中的 b* 对应 s 中的 a)， 此时需要看前面的 s = "xxxa" 与 p = "zz" 的匹配情况，即:
-	
-	$dp[i][j] = dp[i][j - 2]$
+			* s = "xxxayyy", p = "zzb\*www" (p 中的 b* 对应 s 中的 a)， 此时需要看前面的 s = "xxxa" 与 p = "zz" 的匹配情况，即: $dp[i][j] = dp[i][j - 2]$
 	
 * 边界情况
       * s = "", p = "", $dp[0][0] = true$
