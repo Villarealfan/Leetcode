@@ -3,9 +3,12 @@
 
 #include <vector>
 #include <unordered_map>
+#include <stack>
+#include <queue>
 #include <string>
 #include <string.h>
 #include <iostream>
+#include <algorithm>
 #include <sstream>
 #include <math.h>
 #include <stdlib.h>
