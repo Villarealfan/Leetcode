@@ -25,18 +25,22 @@
 class Solution{
 public:
     ListNode* removeNthFromEnd(ListNode* head, int n) {
-        ListNode* dummy = new ListNode(0);
-        dummy->next = head;
         ListNode* fast = head, *slow = head;
-        for (int i = 0; i <= n; i++){
+        // fast 先走 n 步
+        for (int i = 0; i < n; i++){
             fast = fast->next;
         }
-        while (fast){
+
+        // n = 链表长度 m 时，相当于去除链表第一个
+        if (!fast) return head->next;
+
+        // fast, slow 一起走 m - 1 步
+        while (fast->next){
             fast = fast->next;
             slow = slow->next;
         }
         slow->next = slow->next->next;
-        return dummy->next;
+        return head;
     }
 };
 ```
@@ -51,6 +55,8 @@ public:
 > 为了去除倒数第 $N$ 个节点，需要找到它前面的那个节点，如为了去除链表 1 -> 2 -> 3 -> 4 -> 5 的倒数第 2 个节点，需要找到节点 3 ，然后让 3 指向 5 即可。即需要找倒数第 $N + 1$ 个节点， 若总长度为 $M$ ，即是找正数第 $M - (N + 1)$ 个节点。
 
 * 快慢指针
-	* 快指针先走 $N + 1$ 步
-	* 然后快慢指针一起走，快指针走到头时，慢指针走了 $M - (N + 1)$ 步 
+	* 快指针先走 $N$ 步
+		* $N = M$ 时，即去除倒数第 $M$ 个，也就是正数第一个
+	* 然后快慢指针一起走，快指针走到最后一个数字时 (总共走了 $M - 1$ 步)，则慢指针走了 $M - 1 - N$ 步 
+
 

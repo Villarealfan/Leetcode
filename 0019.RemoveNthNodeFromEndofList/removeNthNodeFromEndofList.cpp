@@ -3,18 +3,22 @@
 class Solution {
 public:
     ListNode* removeNthFromEnd(ListNode* head, int n) {
-        ListNode* dummy = new ListNode(0);
-        dummy->next = head;
         ListNode* fast = head, *slow = head;
-        for (int i = 0; i <= n; i++){
+        // fast 先走 n 步
+        for (int i = 0; i < n; i++){
             fast = fast->next;
         }
-        while (fast){
+        
+        // n = 链表长度 m 时，相当于去除链表第一个
+        if (!fast) return head->next;
+
+        // fast, slow 一起走 m - 1 步
+        while (fast->next){
             fast = fast->next;
             slow = slow->next;
         }
         slow->next = slow->next->next;
-        return dummy->next;
+        return head;
     }
 };
 
