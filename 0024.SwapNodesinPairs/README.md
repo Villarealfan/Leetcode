@@ -76,7 +76,7 @@ pre = pre->next;
 
 3. **1 --> 3**
 ```cpp
-    cur->next = pre->next;
+cur->next = pre->next;
 ```
 
               -------------------->
@@ -105,8 +105,8 @@ pre->next = cur;
 
 5. **pre 和 cur 均前移一步**
 ```cpp
-   pre = pre->next; 
-   cur = cur->next;
+pre = pre->next; 
+cur = cur->next;
 ```
 
        0   -->   2   -->   1   -->   3   -->   4
