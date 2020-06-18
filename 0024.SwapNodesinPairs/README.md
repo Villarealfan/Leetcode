@@ -20,7 +20,7 @@ public:
         ListNode* dummy = new ListNode(0);
         dummy->next = head;
         ListNode* pre = dummy, *cur = head;
-        while (cur->next){
+        while (cur && cur->next){
             pre->next = cur->next;
             pre = pre->next;
             cur->next = pre->next;
