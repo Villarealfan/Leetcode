@@ -63,7 +63,7 @@ pre->next = cur->next;
     ↑         ↑    
     pre      cur
 
-2. **pre 从 1 前移到 2 处**
+2. **pre 从 0 前移到 2 处**
 ```cpp
 pre = pre->next;
 ```
