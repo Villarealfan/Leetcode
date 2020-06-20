@@ -100,13 +100,16 @@ NULL
 pre((pre)) -.-> 1
 cur((cur)) -.-> 4
 subgraph one
-3 --> 2 --> 1
+3 --> 2 
+2 --> 1
 end
 subgraph two
-4 --> 5 --> 6
+4 --> 5 
+5 --> 6
 end
 subgraph three
-7 --> 8 -->NULL
+7 --> 8 
+8 -->NULL
 end
 ```
 再对第二部分的 3 个节点翻转，即 4-->5-->6 翻转为 6-->5-->4，结果为
@@ -122,13 +125,16 @@ NULL
 pre((pre)) -.-> 4
 cur((cur)) -.-> 7
 subgraph one
-3 --> 2 --> 1
+3 --> 2 
+2 --> 1
 end
 subgraph two
-6 --> 5 --> 4
+6 --> 5 
+5 --> 4
 end
 subgraph three
-7 --> 8 -->NULL
+7 --> 8 
+8 --> NULL
 end
 ```
 对于第三部分的 2 个节点 (7 --> 8) 不处理。
@@ -154,13 +160,16 @@ NULL
 pre((pre)) -.-> 0
 cur((cur)) -.-> 1
 subgraph one
-1 --> 2 --> 3 
+1 --> 2 
+2 --> 3 
 end
 subgraph two
-4 --> 5 --> 6
+4 --> 5
+5 --> 6
 end
 subgraph three
-7 --> 8 -->NULL
+7 --> 8 
+8 --> NULL
 end
 ```
 首先，将节点 1 后面的节点 2 调整到 0 的后面，即 0-->1-->2-->3 变为 0-->2--> 1-->3
@@ -176,13 +185,16 @@ NULL
 pre((pre)) -.-> 0
 cur((cur)) -.-> 1
 subgraph one
-2 --> 1 --> 3 
+2 --> 1 
+1 --> 3 
 end
 subgraph two
-4 --> 5 --> 6
+4 --> 5 
+5 --> 6
 end
 subgraph three
-7 --> 8 -->NULL
+7 --> 8 
+8 --> NULL
 end
 ```
 再将节点 1 后面的节点 3 调整到 0 的后面，即 0-->2-->1-->3 变为 0-->3--> 2-->1
@@ -198,13 +210,16 @@ NULL
 pre((pre)) -.-> 0
 cur((cur)) -.-> 1
 subgraph one
-3 --> 2 --> 1
+3 --> 2 
+2 --> 1
 end
 subgraph two
-4 --> 5 --> 6
+4 --> 5
+5 --> 6
 end
 subgraph three
-7 --> 8 -->NULL
+7 --> 8
+8 --> NULL
 end
 ```
 由于节点 1 不调整，则这 k 个节点的逐一翻转，需要进行 k - 1 次。
@@ -229,13 +244,16 @@ pre((pre)) -.-> 0
 cur((cur)) -.-> 1
 nex((nex)) -.-> 2
 subgraph one
-1 --> 2 --> 3 
+1 --> 2 
+2 --> 3 
 end
 subgraph two
-4 --> 5 --> 6
+4 --> 5 
+5 --> 6
 end
 subgraph three
-7 --> 8 -->NULL
+7 --> 8 
+8--> NULL
 end
 ```
 ### 3.2 重新连接链表
@@ -268,12 +286,15 @@ pre((pre)) -.-> 0
 cur((cur)) -.-> 1
 nex((nex)) -.-> 2
 subgraph one
-2 --> 1 --> 3 
+2 --> 1 
+1 --> 3 
 end
 subgraph two
-4 --> 5 --> 6
+4 --> 5 
+5 --> 6
 end
 subgraph three
-7 --> 8 -->NULL
+7 --> 8 
+8 --> NULL
 end
 ```
