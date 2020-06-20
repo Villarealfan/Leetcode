@@ -1,4 +1,3 @@
-<script src="mermaid.full.min.js"></script>
 # [题目](https://leetcode.com/problems/reverse-nodes-in-k-group/)
 
 * Reverse Nodes in k-Group
@@ -60,7 +59,7 @@ public:
 # 思路
 
 如 $n = 8, k = 3$ ，如下所示的 $head$ 链表
-<div class="mermaid">
+```mermaid
 graph LR
 0 --> 1 
 2  
@@ -80,13 +79,13 @@ end
 subgraph three
 7 --> 8 -->NULL
 end
-</div>
+```
 将其分为两个循环：
 ## 1. 外循环: 
 > 将链表翻转分为 k + k + ... + m 次处理, 其中 m = n %k  ，即每次处理 k 个节点的翻转，对于最后剩余的 m 个节点不处理。
 
 如下图所示，先将原链表的第一部分的 3 个节点翻转，即 1-->2-->3 翻转为 3-->2-->1 ，结果为
-<div class="mermaid">
+```mermaid
 graph LR
 0 --> 3
 2  
@@ -106,9 +105,9 @@ end
 subgraph three
 7 --> 8 -->NULL
 end
-</div>
+```
 再对第二部分的 3 个节点翻转，即 4-->5-->6 翻转为 6-->5-->4，结果为
-<div class="mermaid">
+```mermaid
 graph LR
 0 --> 3
 2  
@@ -128,7 +127,7 @@ end
 subgraph three
 7 --> 8 -->NULL
 end
-</div>
+```
 对于第三部分的 2 个节点 (7 --> 8) 不处理。
 
 * Note
@@ -140,7 +139,7 @@ end
 > 对于长度为 k 的子链表进行翻转，可分为 k - 1 次调整
 
 以第一部分 3 个节点 1-->2-->3 翻转为 3-->2-->1 为例：
-<div class="mermaid">
+```mermaid
 graph LR
 0 --> 1 
 2  
@@ -160,9 +159,9 @@ end
 subgraph three
 7 --> 8 -->NULL
 end
-</div>
+```
 首先，将节点 1 后面的节点 2 调整到 0 的后面，即 0-->1-->2-->3 变为 0-->2--> 1-->3
-<div class="mermaid">
+```mermaid
 graph LR
 0 --> 2 
 1 
@@ -182,9 +181,9 @@ end
 subgraph three
 7 --> 8 -->NULL
 end
-</div>
+```
 再将节点 1 后面的节点 3 调整到 0 的后面，即 0-->2-->1-->3 变为 0-->3--> 2-->1
-<div class="mermaid">
+```mermaid
 graph LR
 0 --> 3 
 2 
@@ -204,7 +203,7 @@ end
 subgraph three
 7 --> 8 -->NULL
 end
-</div>
+```
 由于节点 1 不调整，则这 k 个节点的逐一翻转，需要进行 k - 1 次。
 因此，问题关键是如何进行逐一翻转，即将 cur 对应节点 (1) 后的节点 (3) 调整到 pre 对应节点 (0) 后面。
 ## 3. 逐一翻转
@@ -214,7 +213,7 @@ end
 nex = cur->next;
 ```
 以 0-->1-->2-->3 变为 0-->2--> 1-->3 为例，如下图所示， nex 对应到节点 2
-<div class="mermaid">
+```mermaid
 graph LR
 0 --> 1 
 2  
@@ -235,7 +234,7 @@ end
 subgraph three
 7 --> 8 -->NULL
 end
-</div>
+```
 ### 3.2 重新连接链表
 > 从后往前连接，即
 >
@@ -253,7 +252,7 @@ pre->next = nex
 ```
 
 重新连接后上面链表变为，
-<div class="mermaid">
+```mermaid
 graph LR
 0 --> 2 
 1  
@@ -274,4 +273,4 @@ end
 subgraph three
 7 --> 8 -->NULL
 end
-</div>
+```
