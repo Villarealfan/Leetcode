@@ -71,14 +71,17 @@ NULL;
 pre((pre)) -.-> 0;
 cur((cur)) -.-> 1;
 subgraph one
-1 --> 2 --> 3 
-end
+1 --> 2 
+2 --> 3 
+end;
 subgraph two
-4 --> 5 --> 6
-end
+4 --> 5 
+5 --> 6
+end;
 subgraph three
-7 --> 8 -->NULL
-end
+7 --> 8 
+8 --> NULL
+end;
 ```
 将其分为两个循环：
 ## 1. 外循环: 
