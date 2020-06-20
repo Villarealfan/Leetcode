@@ -61,15 +61,15 @@ public:
 如 $n = 8, k = 3$ ，如下所示的 $head$ 链表
 ```mermaid
 graph LR
-0 --> 1 
-2  
-3 --> 4 
-5 
-6 --> 7  
-8
-NULL
-pre((pre)) -.-> 0
-cur((cur)) -.-> 1
+0 --> 1;
+2;
+3 --> 4; 
+5;
+6 --> 7;  
+8;
+NULL;
+pre((pre)) -.-> 0;
+cur((cur)) -.-> 1;
 subgraph one
 1 --> 2 --> 3 
 end
