@@ -5,6 +5,21 @@
 
 class Tools{
 public:
+    vector<string> split(string s, string p){
+        vector<string> res;
+        s += p;
+        int n = s.length(), m = p.length();
+        for (int i = 0; i < n; i++){
+            int j = s.find(p, i);
+            if (j < n){
+                string subs = s.substr(i, j - i);
+                res.push_back(subs);
+                i = j + m - 1;
+            }
+        }
+        return res;
+    }
+
     vector<int> stringToVector(string s){
         vector<int> res;
         if (s.empty()) return res;
