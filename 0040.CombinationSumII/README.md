@@ -74,7 +74,7 @@ private:
 * 空间复杂度: $O(n!)$
 
 # 思路
-
+* 类似 [CombinationSum](https://github.com/Villarealfan/Leetcode/tree/master/0039.CombinationSum)
 * DFS
 * 先排序
 * 注意去重
