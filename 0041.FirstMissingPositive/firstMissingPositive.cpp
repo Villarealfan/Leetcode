@@ -5,7 +5,7 @@ public:
 	int firstMissingPositive(vector<int>& nums) {
 		if (nums.empty()) return 1;
 		int n = (int)nums.size();
-		// 桶排序
+		//  [3,4,-1,1] --> [1,-1,3,4]
         for (int i = 0; i < n; i++){
 			while (nums[i] > 0 && nums[i] <= n && nums[nums[i] - 1] != nums[i]){
 				int temp = nums[nums[i] - 1];
@@ -13,12 +13,15 @@ public:
 				nums[i] = temp;
 			}
 		}
-
+		
+		// [1,-1,3,4] 中找到 -1
 		for (int i = 0; i < n; i++){
 			if (nums[i] != i + 1){
 				return i + 1;
 			}
 		}
+		
+		// [1,2,3]
 		return n + 1;
     }
 };
