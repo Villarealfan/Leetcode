@@ -59,7 +59,7 @@ public:
 * num1 * num2 最多为 $m + n$ 位， $m$ 位的 $num1$ 最多为 $\underbrace{99...99}\_\text{m 位}$ ， $n$ 位的 $num2$ 最多为 $\underbrace{99...99}\_\text{n 位}$ 
 
 $$
-\underbrace{99...99}\_\text{m 位} \times \underbrace{99...99}\_\text{n 位} = \underbrace{99...99}\_\text{m 位} \times (\underbrace{10...00}\_\text{n 位} - 1) \leq \underbrace{99...99}\_\text{m 位} \times \underbrace{10...00}\_\text{n 位} = \underbrace{\underbrace{99...99}\_\text{m 位}\underbrace{0...00}\_\text{n 位}}\_\text{m + n 位}
+\underbrace{99...99}\_\text{m 位} \times \underbrace{99...99}\_\text{n 位} = \underbrace{99...99}\_\text{m 位} \times (\underbrace{10...00}\_\text{n 位} - 1) < \underbrace{99...99}\_\text{m 位} \times \underbrace{10...00}\_\text{n 位} = \underbrace{\underbrace{99...99}\_\text{m 位}\underbrace{0...00}\_\text{n 位}}\_\text{m + n 位}
 $$
 
 * 注意做乘法时候，倒着乘， i + j + 1位是较低位，i + j 是高位
