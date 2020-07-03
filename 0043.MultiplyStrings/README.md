@@ -56,7 +56,7 @@ public:
 
 # 思路
 
-* num1 * num2 最多为 $m + n$ 位， $m$ 位的 $num1$ 最多为 $\underbrace{99...99}_\text{m}$ ， $n$ 位的 $num2$ 最多为 $\underbrace{99...99}_\text{n}$ 
+* num1 * num2 最多为 $m + n$ 位， $m$ 位的 $num1$ 最多为 $\underbrace{99...99}\_\text{m}$ ， $n$ 位的 $num2$ 最多为 $\underbrace{99...99}\_\text{n}$ 
 
 $$
 \underbrace{99...99}_\text{m} \times \underbrace{99...99}_\text{n} = \underbrace{99...99}_\text{m} \times (\underbrace{10...00}_\text{n} - 1) \leq \underbrace{99...99}_\text{m} \times \underbrace{10...00}_\text{n} = \underbrace{\underbrace{99...99}_\text{m}\underbrace{0...00}_\text{n}}_\text{m + n}
