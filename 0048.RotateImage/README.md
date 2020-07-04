@@ -99,4 +99,4 @@ public:
 
 * 一次旋转是 4 个元素互相交换，注意 i,j 的范围, 如下图所示，从 n = 3 到 n = 6, 红 -> 蓝 -> 黄 -> 绿的旋转顺序
 
-![](rotate.png)
+![](https://github.com/Villarealfan/Leetcode/blob/master/0048.RotateImage/rotate.png)
