@@ -95,7 +95,7 @@ private:
 # 思路
 
 * dfs 
-* $queens[row] = col$, 表示第 row 行第 col 列是否放置皇后
+* $queens[row] = col$, 表示第 row 行第 col 列放置皇后
 * 一行行的放，判断合法性时，只需与前几行比较
 	* 是否同列: $queens[i] == queens[row]$
 	* 是否在一条对角线上: $abs(queens[i] - queens[row]) == abs(i - row)$
