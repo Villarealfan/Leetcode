@@ -87,5 +87,3 @@ private:
 * diag135 表示对应 135 度对角线是否有皇后，编号如下所示
 
 ![](https://raw.githubusercontent.com/Villarealfan/Leetcode/master/0052.N-QueensII/135.jpg)
-
-
