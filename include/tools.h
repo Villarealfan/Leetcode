@@ -86,6 +86,25 @@ public:
         cur->next = tail;
         return dummy;
     }
+
+    vector<vector<int> > getRandomMatrix(int n){
+        int m = n*n;
+        vector<vector<int> > matrix(n, vector<int>(n, 0));
+        bool used[m + 1];
+        memset(used, 0, sizeof(used));
+        for (int i = 0; i < n; i++){
+            for (int j = 0; j < n; j++){
+                srand(time(0));
+                int num = rand()% m + 1;
+                while (used[num]){
+                    num = rand()% m + 1;
+                }
+                matrix[i][j] = num;
+                used[num] = true;
+            }
+        }
+        return matrix;
+    }
 };
 
 
