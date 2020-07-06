@@ -24,26 +24,14 @@ public:
 
 int main(){
     Solution so;
+    Tools tool;
+
+    int n;
     cout << "输入方阵大小:" << endl;
-    int m,n,num;
     cin >> n;
     
     // 生成 n*n 的方阵
-    m = n*n;
-    vector<vector<int> > matrix(n, vector<int>(n, 0));
-    bool used[m + 1];
-    memset(used, 0, sizeof(used));
-    for (int i = 0; i < n; i++){
-        for (int j = 0; j < n; j++){
-            srand(time(0));
-            num = rand()% m + 1;
-            while (used[num]){
-                num = rand()% m + 1;
-            }
-            matrix[i][j] = num;
-            used[num] = true;
-        }
-    }
+    vector<vector<int> > matrix = tool.getRandomMatrix(n);
 
     cout << "输入矩阵为:" << endl;
     for (int i = 0; i < n; i++){
