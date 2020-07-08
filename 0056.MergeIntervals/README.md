@@ -1,4 +1,4 @@
-# [题目] (https://leetcode.com/problems/merge-intervals/)
+# [题目](https://leetcode.com/problems/merge-intervals/)
 
 * Merge Intervals
 
