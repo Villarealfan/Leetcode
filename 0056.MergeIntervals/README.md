@@ -58,10 +58,12 @@ public:
 * 细节实现
 
 * 有交集时，$l <= end$
+
 ![](https://raw.githubusercontent.com/Villarealfan/Leetcode/master/0056.MergeIntervals/1.jpg)
 
 
 
 
 * 没有交集时
+
 ![](https://raw.githubusercontent.com/Villarealfan/Leetcode/master/0056.MergeIntervals/2.jpg)
