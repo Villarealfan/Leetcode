@@ -1,4 +1,4 @@
-# [题目] (https://leetcode.com/problems/insert-interval/)
+# [题目](https://leetcode.com/problems/insert-interval/)
 
 * Insert Interval
 
