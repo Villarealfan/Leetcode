@@ -1,4 +1,4 @@
-#[题目](https://leetcode.com/problems/permutation-sequence/)
+# [题目](https://leetcode.com/problems/permutation-sequence/)
 
 * Permutation Sequence
 
