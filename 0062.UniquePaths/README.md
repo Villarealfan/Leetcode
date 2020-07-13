@@ -44,7 +44,7 @@
 ```cpp
 class Solution {
 public:
-    int uniquePaths_dp(int m, int n) {
+    int uniquePaths_dp1(int m, int n) {
         int dp[100][100];
         for (int i = 0; i < m; i++){
             dp[i][0] = 1;
@@ -58,6 +58,16 @@ public:
             }
         }
         return dp[m - 1][n - 1];
+    }
+
+    int uniquePaths_dp2(int m, int n){
+        vector<int> dp(n, 1);
+        for (int i = 1; i < m; i++){
+            for (int j = 1; j < n; j++){
+                dp[j] += dp[j - 1];
+            }
+        }
+        return dp[n - 1];
     }
 
     int uniquePaths_math(int m, int n){
@@ -87,9 +97,13 @@ $dp[i][j] = dp[i-1][j] + dp[i][j - 1]$
 
 >- 边界情况
 
-	>- $dp[i][0] = 1$，一路向下
+	>- dp[i][0] = 1，一路向下
 
-	>- $dp[0][j] = 1$，一路向右
+	>- dp[0][j] = 1，一路向右
+
+* 二维数组改为一维数组存储
+
+> 只需要记录各行或者各列情况
 
 * 组合数
 > 往下需要 m - 1 步，往右需要 n - 1 步，总共 m+n-2步，因此总共可能情况：
