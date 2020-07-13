@@ -3,7 +3,7 @@
 
 class Solution {
 public:
-    int uniquePaths_dp(int m, int n) {
+    int uniquePaths_dp1(int m, int n) {
         int dp[100][100];
         for (int i = 0; i < m; i++){
             dp[i][0] = 1;
@@ -17,6 +17,16 @@ public:
             }
         }
         return dp[m - 1][n - 1];
+    }
+
+    int uniquePaths_dp2(int m, int n){
+        vector<int> dp(n, 1);
+        for (int i = 1; i < m; i++){
+            for (int j = 1; j < n; j++){
+                dp[j] += dp[j - 1];
+            }
+        }
+        return dp[n - 1];
     }
 
     int uniquePaths_math(int m, int n){
@@ -39,8 +49,11 @@ int main(){
     cout << "输入 m, n:" << endl;
     cin >> m >> n;
 
-    int output_dp = so.uniquePaths_dp(m, n);
-    cout << "输出:\n" << "动态规划:" << output_dp << endl;
+    int output_dp1 = so.uniquePaths_dp1(m, n);
+    cout << "输出:\n" << "一维动态规划:" << output_dp1 << endl;
+    
+    int output_dp2 = so.uniquePaths_dp2(m, n);
+    cout << "输出:\n" << "二维动态规划:" << output_dp2 << endl;
     
     int output_math = so.uniquePaths_math(m,n);
     cout << "组合数: " << output_math << endl;
