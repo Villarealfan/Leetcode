@@ -1,4 +1,4 @@
 # Leetcode
-Talk is cheap, show me the code!
 
-# C++
+**Talk is cheap, show me the code!**
+
