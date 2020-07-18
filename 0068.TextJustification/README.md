@@ -1,4 +1,4 @@
-# [题目] (https://leetcode.com/problems/text-justification/)
+# [题目](https://leetcode.com/problems/text-justification/)
 
 * Text Justification
 
