@@ -1,4 +1,4 @@
-# [题目] (https://leetcode.com/problems/remove-duplicates-from-sorted-list-ii/)
+# [题目](https://leetcode.com/problems/remove-duplicates-from-sorted-list-ii/)
 
 * Remove Duplicates from Sorted List II
 
