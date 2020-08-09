@@ -62,4 +62,4 @@ public:
 
 >- 其他，dp[i] = dp[i - 1]
 
-* 用 one 和 two 来替代 O(N) 的 dp 数组
+* 用 one 和 two 来分别替代 O(N) 的 dp 数组当前的 dp[i] 和上一个处理的 dp[i - 1]
