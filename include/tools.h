@@ -105,6 +105,27 @@ public:
         }
         return matrix;
     }
+
+    TreeNode* stringToTreeNode(string s){
+        vector<string> nums = split(s, ",");
+        TreeNode* root = createTree(nums, 0);
+        return root;
+    }
+
+    TreeNode* createTree(vector<string>& nums, int i){
+        if (i >= nums.size()){
+            return NULL;
+        }
+        string val = nums[i];
+        if (val == "null"){
+            return NULL;
+        }
+        TreeNode* node = new TreeNode(atoi(val.c_str()));
+        node->left = createTree(nums, 2*i + 1);
+        node->right = createTree(nums, 2*i + 2);
+        return node;
+    }
+
 };
 
 
